@@ -29,3 +29,5 @@ This project is set up for a gitflow:ish workflow. Never push directly to main o
 When your new cool feuture is done, open a pull request towards the dev branch, and tag someone if you want a code review before merge.
 
 **All work is to be done into dev branch main branch is only for release**
+
+#### If you have questions regarding the code, reach out to me on Discord.

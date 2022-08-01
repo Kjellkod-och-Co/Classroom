@@ -15,3 +15,31 @@
     </div>
   </div>
 </header>
+
+<!-- rooms -->
+<main class="container-fluid">
+  <div class="row">
+    <aside class="col-4" style="border: 1px solid #fd7e14">
+      <h3 class="text-center">Active People</h3>
+      <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+    </aside>
+    <section class="col-8" style="border: 1px solid #a52834">
+      <h3 class="text-center">Rooms</h3>
+      <article class="col-sm-12 room-list">
+        <div class="card" *ngFor="let room of [1,2,3,4,5]">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</main>

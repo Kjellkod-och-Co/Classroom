@@ -11,3 +11,11 @@
 .space-between {
     justify-content: space-between;
 }
+
+.room-list {
+  overflow: scroll;
+  height: 75vh;
+  .card {
+    margin-bottom: 10px;
+  }
+}

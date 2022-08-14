@@ -28,9 +28,8 @@ export class ClassroomComponent implements OnInit {
   }
 
   getOnlineUsers() {
-    this.db.object('online-users').valueChanges().subscribe((users: any) => {
-      const onlineUsers = Object.keys(users).map((key) => users[key]);
-      this.users = onlineUsers;
+    this.db.list('online-users').valueChanges().subscribe((users: any) => {
+      this.users = users;
     });
     
   }

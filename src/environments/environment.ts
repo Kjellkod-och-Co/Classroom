@@ -4,13 +4,13 @@
 
 export const environment = {
   firebase: {
-    projectId: 'classroom-cb5c1',
-    appId: '1:53849865808:web:0c15b9a28e210467fe9b55',
-    storageBucket: 'classroom-cb5c1.appspot.com',
-    apiKey: 'AIzaSyByBSu6UfAmUkINX6icNOBDQ0m2NXlWowk',
-    authDomain: 'classroom-cb5c1.firebaseapp.com',
-    messagingSenderId: '53849865808',
-    measurementId: 'G-5QB79LS97X',
+    apiKey: "AIzaSyAfEZohWxhbtlqcr5lgMXyrHYxh7LwDLrg",
+    authDomain: "the-classroom-6907a.firebaseapp.com",
+    projectId: "the-classroom-6907a",
+    storageBucket: "the-classroom-6907a.appspot.com",
+    messagingSenderId: "907103238801",
+    appId: "1:907103238801:web:026878f4ef343693fe5d30",
+    measurementId: "G-6PB7J2KZGP"
   },
   production: false
 };

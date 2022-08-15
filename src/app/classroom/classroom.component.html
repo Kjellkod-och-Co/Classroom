@@ -1,6 +1,3 @@
-<!-- <pre *ngIf="fAuth.user | async as user;">
-    {{user | json}}
-</pre> -->
 <header class="p-3 mb-3 border-bottom">
   <div class="container">
     <div class="d-flex space-between">
@@ -21,9 +18,13 @@
   <div class="row">
     <aside class="col-4">
       <h3 class="text-center">Active People</h3>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let user of users">{{ user }}</li>
-      </ul>
+      <div *ngIf="presence$ | async as presence">
+        <ul class="list-group">
+          <li class="list-group-item text-center" *ngFor="let user of users" [ngClass]="{'list-group-item-success': presence}">
+            {{ user }}
+          </li>
+        </ul>
+      </div>
     </aside>
     <section class="col-8">
       <h3 class="text-center">Rooms</h3>

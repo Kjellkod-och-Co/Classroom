@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Router } from '@angular/router';
+import { PresenceService } from '../services/presence.service';
 
 @Component({
   selector: 'app-classroom',
@@ -9,17 +10,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./classroom.component.scss']
 })
 export class ClassroomComponent implements OnInit {
-  constructor(public fAuth: AngularFireAuth, private router: Router, private db: AngularFireDatabase) { }
+  constructor(public fAuth: AngularFireAuth, private router: Router, private db: AngularFireDatabase, public presence: PresenceService) { }
+
+  // *** main variables.
+  presence$:any;
+
+  // *** testing ends here
+
+
   photoUrl: any;
   users: any;
   ngOnInit(): void {
     // get the user.
-    const userRef = this.db.object('online-users');
+    const userRef = this.db.object('online-users'); // ? is this line redundant now?
     this.fAuth.user.subscribe(u => {
-      userRef.update({user: u?.displayName});
+      this.presence$ = this.presence.getPresence(u?.displayName!);
+      userRef.update({user: u?.displayName}); // ? is userRef even needed when line 27 does it wtih the service?
       this.photoUrl = u?.photoURL;
     });
-    this.getOnlineUsers();
+    this.getOnlineUsers(); 
+    
   }
 
   logout() {

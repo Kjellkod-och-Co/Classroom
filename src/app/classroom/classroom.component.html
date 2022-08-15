@@ -21,7 +21,7 @@
       <div *ngIf="presence$ | async as presence">
         <ul class="list-group">
           <li class="list-group-item text-center" *ngFor="let user of users" [ngClass]="{'list-group-item-success': presence}">
-            {{ user }}
+            {{ user.key }}
           </li>
         </ul>
       </div>

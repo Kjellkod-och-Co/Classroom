@@ -20,28 +20,32 @@ export class ClassroomComponent implements OnInit {
 
   photoUrl: any;
   users: any;
+  uid: any;
+
   ngOnInit(): void {
     // get the user.
     const userRef = this.db.object('online-users'); // ? is this line redundant now?
     this.fAuth.user.subscribe(u => {
       this.presence$ = this.presence.getPresence(u?.displayName!);
+      this.uid = u?.uid;
       userRef.update({user: u?.displayName}); // ? is userRef even needed when line 27 does it wtih the service?
       this.photoUrl = u?.photoURL;
     });
-    this.getOnlineUsers(); 
-    
+    this.getOnlineUsers();
   }
 
   logout() {
+    this.fAuth.user.subscribe(user => {
+      this.db.list(`status/${user?.displayName}`).remove();
+    });
     this.fAuth.signOut();
     this.router.navigate(['auth']);
   }
 
   getOnlineUsers() {
-    this.db.list('online-users').valueChanges().subscribe((users: any) => {
+    this.db.list('status').snapshotChanges().subscribe((users: any) => {
       this.users = users;
     });
-    
   }
 
 }

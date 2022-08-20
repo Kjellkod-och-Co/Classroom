@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthpageComponent } from './authpage/authpage.component';
 import { ClassroomComponent } from './classroom/classroom.component';
 import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard';
+import { VideoroomComponent } from './videoroom/videoroom.component';
 
 
 const goToClassroom = () => redirectLoggedInTo(['classroom']);
@@ -15,6 +16,7 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin}
   },
+  { path: 'video-room', component: VideoroomComponent},
   { path: '', redirectTo:'/auth', pathMatch: 'full'},
 ];
 

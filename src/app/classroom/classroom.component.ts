@@ -48,4 +48,8 @@ export class ClassroomComponent implements OnInit {
     });
   }
 
+  goToVideoRoom() {
+    this.router.navigate(['video-room']);
+  }
+
 }

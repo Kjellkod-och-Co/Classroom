@@ -7,6 +7,7 @@ export class DataService {
 
   data: string = '';
   user: any = '';
+  token: any = '';
 
   constructor() { }
 
@@ -15,8 +16,8 @@ export class DataService {
     this.data = id;
   }
 
-  getMeetingId() {
-    return this.data;
+  async getMeetingId  () {
+    return await this.token.id;
   }
 
   getUser() {
@@ -26,5 +27,10 @@ export class DataService {
 
   setUser(user: string) {
     this.user = user;
+  }
+
+  saveToken(token: string) {
+    console.log('the token in data service --> ', token);
+    this.token = token;
   }
 }

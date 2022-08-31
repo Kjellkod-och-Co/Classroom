@@ -12,6 +12,7 @@ export const environment = {
     appId: "1:907103238801:web:026878f4ef343693fe5d30",
     measurementId: "G-6PB7J2KZGP"
   },
+  videoSDKTOKEN: '02ee430f-1467-4103-aae1-406bdbcde29e',
   production: false
 };
 

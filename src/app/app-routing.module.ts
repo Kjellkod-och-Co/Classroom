@@ -16,7 +16,7 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin}
   },
-  { path: 'video-room', component: VideoroomComponent},
+  { path: 'video-room/:meetingId', component: VideoroomComponent},
   { path: '', redirectTo:'/auth', pathMatch: 'full'},
 ];
 

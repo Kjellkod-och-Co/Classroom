@@ -34,7 +34,9 @@
               "src/styles.scss",
               "node_modules/bootstrap/scss/bootstrap.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@videosdk.live/js-sdk/videosdk.js"
+            ]
           },
           "configurations": {
             "production": {

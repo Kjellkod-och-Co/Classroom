@@ -16,11 +16,11 @@ declare var VideoSDK: any;
 })
 export class VideoroomComponent implements OnInit {
   constructor(private fAuth: AngularFireAuth, private router: Router,
-    private db: AngularFireDatabase, private dataService: DataService, private apiCall:ApiService) {
+    private db: AngularFireDatabase, private dataService: DataService, private apiCall: ApiService) {
     // Initialising VideoSDK...
     VideoSDK.config(environment.videoSDKTOKEN);
     console.log('Starting Video Meeting.');
-    
+
   }
 
   photoUrl: any;
@@ -32,23 +32,31 @@ export class VideoroomComponent implements OnInit {
     });
 
     this.initMeeting();
+    this.initMediaThings();
   }
 
   initMeeting(): void {
     // TODO: Make meeting id api call -> https://docs.videosdk.live/api-reference/realtime-communication/create-room
     this.apiCall.createMeetingId()
-    .subscribe((t: any) => {
-      this.dataService.saveToken(t);
-    });
+      .subscribe((t: any) => {
+        this.dataService.saveToken(t);
+      });
+    // console.log('the meeting id: ' + id);
     const id = this.dataService.getMeetingId();
-    console.log('the meeting id: ' + id);
-    
     VideoSDK.initMeeting({
-      meetingId: 'id',
+      meetingId: id,
       name: this.dataService.getUser(),
     });
-    
-    
+  }
+
+  initMediaThings() {
+    //request permission for accessing media(mic/webcam)
+    navigator.mediaDevices
+      .getUserMedia({
+        video: true,
+        audio: true,
+      })
+      .then((stream) => { });
   }
 
   logout() {

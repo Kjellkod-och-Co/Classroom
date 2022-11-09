@@ -1,6 +1,3 @@
-<!-- <pre *ngIf="fAuth.user | async as user;">
-    {{user | json}}
-</pre> -->
 <header class="p-3 mb-3 border-bottom">
   <div class="container">
     <div class="d-flex space-between">
@@ -21,13 +18,13 @@
   <div class="row">
     <aside class="col-4">
       <h3 class="text-center">Active People</h3>
-      <ul class="list-group">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-      </ul>
+      <div *ngIf="presence$ | async as presence">
+        <ul class="list-group">
+          <li class="list-group-item text-center" *ngFor="let user of users" [ngClass]="{'list-group-item-success': presence}">
+            {{ user.key }}
+          </li>
+        </ul>
+      </div>
     </aside>
     <section class="col-8">
       <h3 class="text-center">Rooms</h3>
@@ -36,7 +33,7 @@
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <button class="btn btn-primary" (click)="goToVideoRoom(room)">Go somewhere</button>
           </div>
         </div>
       </article>

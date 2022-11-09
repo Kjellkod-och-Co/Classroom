@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthpageComponent } from './authpage/authpage.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ClassroomComponent } from './classroom/classroom.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ClassroomComponent } from './classroom/classroom.component';
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [
     ScreenTrackingService,UserTrackingService,

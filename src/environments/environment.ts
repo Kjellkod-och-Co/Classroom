@@ -12,6 +12,7 @@ export const environment = {
     appId: "1:907103238801:web:026878f4ef343693fe5d30",
     measurementId: "G-6PB7J2KZGP"
   },
+  videoSDKTOKEN: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiIwMmVlNDMwZi0xNDY3LTQxMDMtYWFlMS00MDZiZGJjZGUyOWUiLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTY2MTk3ODAzNiwiZXhwIjoxNjYyNTgyODM2fQ.bsI8Pye7B90-_3sgYsBNylrBUDLJYkqiLMGV7N3zmZE',
   production: false
 };
 

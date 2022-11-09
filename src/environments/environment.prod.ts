@@ -10,6 +10,6 @@ export const environment = {
   },
   production: true,
   videoSDK: {
-    TOKEN: '02ee430f-1467-4103-aae1-406bdbcde29e'
+    TOKEN: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiIwMmVlNDMwZi0xNDY3LTQxMDMtYWFlMS00MDZiZGJjZGUyOWUiLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTY2MTk3ODAzNiwiZXhwIjoxNjYyNTgyODM2fQ.bsI8Pye7B90-_3sgYsBNylrBUDLJYkqiLMGV7N3zmZE'
   }
 };
